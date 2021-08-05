@@ -15,7 +15,7 @@ import com.cognizant.membermicroservice.model.AuthenticationResponse;
  *
  */
 
-@FeignClient(name = "authenticationFeignClient", url = "${AUTH_SERVICE:http://localhost:8089}")
+@FeignClient(name = "authenticationFeignClient", url = "${AUTH_SERVICE:http://Pod3ij033authservice-env.eba-e66cgrtc.ap-south-1.elasticbeanstalk.com}")
 public interface AuthClient {
 
 	@GetMapping("/authorization/validate")
