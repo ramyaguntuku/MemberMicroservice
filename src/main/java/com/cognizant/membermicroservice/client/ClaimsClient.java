@@ -19,7 +19,7 @@ import com.cognizant.membermicroservice.dto.ClaimStatusDTO;
  *
  */
 @Component
-@FeignClient(name = "claims-microservice", url = "http://localhost:8090/claims")
+@FeignClient(name = "claims-microservice", url = "http://Pod3ij033claimservice-env.eba-e66cgrtc.ap-south-1.elasticbeanstalk.com/claims")
 public interface ClaimsClient {
 
 	@GetMapping("/getClaimStatus/{claimId}/{policyId}/{memberId}")
