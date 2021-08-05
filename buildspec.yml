@@ -5,21 +5,15 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - mvn clean install
-      - echo Logging in to Amazon ECR...
-      - aws --version
-      - echo Nothing to do in the pre_build phase...
+      - echo "Entered the pre-build"
   build:
     commands:
-      - echo Build started on `date`
-      - mvn install
-      - mvn compile
-      - mvn package
+      - echo "Entered the build phase"
+      - mvn clean prepare-package war:exploded
   post_build:
     commands:
-      - echo Build completed on `date`
-      - mv target/*.jar member-app.jar
-      - dir
+      - echo "Entered the post-build phase"
+      - mv target/deploy ./
 artifacts:
   files:
-    - member-app.jar
+    - deploy/**/*
